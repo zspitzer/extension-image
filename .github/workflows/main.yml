@@ -49,9 +49,10 @@ jobs:
         webroot: ${{ github.workspace }}/lucee/test
         execute: /bootstrap-tests.cfm
         luceeVersion: ${{ env.luceeVersion }}
-        extensionDir: ${{ github.workspace }}/dist
+        extensionDir: ${{ github.workspace }}/dist        
       env:
         testFilter: image
+        testAdditional: ${{ github.workspace }}/dist
     - name: Publish Test Results
       uses: EnricoMi/publish-unit-test-result-action@v1
       if: always()
